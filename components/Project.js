@@ -44,7 +44,7 @@ class Project extends Component {
             <Parallax
               offsetYMax={10}
               offsetYMin={-10}
-              disabled={false}
+              disabled={this.props.mobile}
             >
               <img src={`${this.props.image}/top.png`} className="top-img"/>
             </Parallax>

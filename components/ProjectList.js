@@ -23,6 +23,7 @@ class ProjectList extends Component {
             source={project.source}
             image={project.image}
             color={project.color}
+            mobile={this.props.mobile}
           />
         ))}
       </ul>
