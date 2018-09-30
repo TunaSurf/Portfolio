@@ -49,11 +49,11 @@ class Index extends Component {
           
           <section>
             <div>
-              <h2>Progress Inbound</h2>
+              <h2>Projects</h2>
             </div>
             <p>
-              As a developer + designer based in Virginia Beach, I work to create
-              user-focused experiences through the use of cutting edge technologies.
+              Hey! My name is Chase and I am a Front-End Web Developer specializing in JavaScript and React. 
+              Check out some of the projects I've completed below and visit me on <a href="https://github.com/TunaSurf">Github</a>
             </p>
           </section>
           <ProjectList mobile={this.state.isMobile} />
@@ -62,7 +62,7 @@ class Index extends Component {
               position: relative;
               height: 90vh;
               width: 100%;
-              background-image: url('./static/feathers-4k.jpg');
+              background-image: url('./static/feathers-500.jpg');
               background-size: cover;
               background-position: center;
               background-attachment: fixed;
@@ -124,7 +124,7 @@ class Index extends Component {
               animation: 2000ms arrow ease infinite;
             }
             .arrow-container svg:first-child {
-              top: 10px;
+              top: 14px;
               animation-delay: 110ms;
             }
             @keyframes arrow {
@@ -151,7 +151,7 @@ class Index extends Component {
               background-color: #1e1e20;
               box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2); 
             }
-            section h2, section p {
+            section h2, section p, section a {
               color: #F4F4F8;
             }
             section h2 {
@@ -175,6 +175,28 @@ class Index extends Component {
             section p {
               font-weight: 300;
               font-style: italic;
+            }
+            a {
+              position: relative;
+              font-weight: 300;
+              z-index: 1;
+            }
+            a:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 1px;
+              background: #20b2aa;
+              opacity: 0.6;
+              z-index: -1;
+              transition: 200ms 50ms ease;
+            }
+            a:hover:after {
+              bottom: 40%;
+              transform-origin: bottom;
+              transform: scaleY(8);
             }
             @media screen and (max-width: 1000px) {
               header {
@@ -206,6 +228,42 @@ class Index extends Component {
               section {
                 padding: 100px 15px;
               }
+            }
+            // Background-image sizes for header
+            @media only screen and (min-height: 501px) {
+              header {
+                background-image: url("./static/feathers-720.jpg"); 
+              } 
+            }
+            @media only screen and (min-height: 721px) {
+              header {
+                background-image: url("./static/feathers-900.jpg"); 
+              } 
+            }
+            @media only screen and (min-height: 901px) {
+              header {
+                background-image: url("./static/feathers-1080.jpg"); 
+              } 
+            }
+            @media only screen and (min-height: 1081px) {
+              header {
+                background-image: url("./static/feathers-4k.jpg"); 
+              } 
+            }
+            @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 320px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 320px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 320px), only screen and (min-device-pixel-ratio: 2) and (min-height: 320px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 320px), only screen and (min-resolution: 192dpi) and (min-height: 320px), only screen and (min-resolution: 2dppx) and (min-height: 320px) {
+              header {
+                background-image: url("./static/feathers-900.jpg"); 
+              } 
+            }
+            @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 501px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 501px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 501px), only screen and (min-device-pixel-ratio: 2) and (min-height: 501px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 501px), only screen and (min-resolution: 192dpi) and (min-height: 501px), only screen and (min-resolution: 2dppx) and (min-height: 501px) {
+              header {
+                background-image: url("./static/feathers-1080.jpg"); 
+              } 
+            }
+            @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 721px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 721px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 721px), only screen and (min-device-pixel-ratio: 2) and (min-height: 721px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 721px), only screen and (min-resolution: 192dpi) and (min-height: 721px), only screen and (min-resolution: 2dppx) and (min-height: 721px) {
+              header {
+                background-image: url("./static/feathers-4k.jpg"); 
+              } 
             }
           `}</style>
         </Layout>

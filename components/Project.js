@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Parallax } from 'react-scroll-parallax';
+import ProjectPreviewImage from './ProjectPreviewImage';
+
+//Could probably split this up into 2 more components within - Preview and Details
 
 class Project extends Component {
   constructor(props) {
@@ -24,6 +26,11 @@ class Project extends Component {
     e.target.parentNode.classList.toggle('active');
   }
 
+  closeProject = (e) => {
+    //li is four parents up from the button, so use closest instead of parentNode
+    e.target.closest('li').classList.remove('active');
+  }
+
   //function to get new height of project details on page resize
   handleResize = () => {
     window.requestAnimationFrame(() => {
@@ -35,20 +42,14 @@ class Project extends Component {
     const projectColor = this.props.color;
     let detailsHeight = this.state.detailsHeight;
     
-    
     return (
       <li>
         <div className="project-preview" onClick={this.setProjectActive} >
-          <div className="parallax-container">
-            <img src={`${this.props.image}/base.png`} alt={`${this.props.name} preview`} className="base-img"/>
-            <Parallax
-              offsetYMax={10}
-              offsetYMin={-10}
-              disabled={this.props.mobile}
-            >
-              <img src={`${this.props.image}/top.png`} className="top-img"/>
-            </Parallax>
-          </div>
+          <ProjectPreviewImage 
+            name={this.props.name}
+            image={this.props.image}
+            mobile={this.props.mobile}
+          />
           <div className="darken"></div>
           <header>
             <h2>{this.props.name}</h2>
@@ -75,6 +76,7 @@ class Project extends Component {
             <div className="details-right">
               {this.props.description.split('\\n').map((line,i) => <p key={i}>{line}</p>)}
             </div>
+            <div className="close-container" onClick={this.closeProject}><button>x</button></div>
           </div>
         </section>
         <style jsx>{`
@@ -121,6 +123,7 @@ class Project extends Component {
           }
           .arrow {
             transform: rotate(-90deg);
+            height: 1.5rem;
             width: 1.5rem;
             min-width: 1.5rem;
             opacity: 0.75;
@@ -130,36 +133,13 @@ class Project extends Component {
           .active .arrow {
             transform: rotate(0);
           }
-          .parallax-container {
-            height: 100%;
-            width: 400px;
-            position: absolute;
-            top: 0;
-            right: 5%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-          }
-          img {
-            user-select: none;
-          }
-          .base-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          .top-img {
-            position: relative;
-          }
-          .base-img, .top-img {
-            width: 100%;
-          }
           .project-details-container {
             height: 0;
             background-color: #F4F4F8;
             width: 100%;
             box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.3), inset 0 5px 5px -5px rgba(0,0,0,0.25), inset 0 -12px 12px -12px rgba(0,0,0,0.3), inset 0 -5px 5px -5px rgba(0,0,0,0.25);
             overflow: hidden;
+            transform: translate3d(0,0,0);
             transition: height 200ms cubic-bezier(.17,.67,.16,.99);
           }
           .active .project-details-container {
@@ -170,7 +150,8 @@ class Project extends Component {
             padding: 100px 40px;
             box-sizing: border-box;
             display: grid;
-            grid-auto-flow: column;
+            // grid-auto-flow: column;
+            grid-template-columns: auto auto;
             grid-column-gap: 40px;
             grid-row-gap: 1.4em;
             justify-content: center;
@@ -239,6 +220,35 @@ class Project extends Component {
           p:last-child {
             margin-bottom: 0;
           }
+          .close-container {
+            grid-column-end: -1;
+            grid-row-start: span -1;
+            justify-self: end;
+            margin-top: 40px;
+          }
+          button {
+            border: none;
+            border-radius: 50%;
+            background: rgba(30,30,32,0.7);
+            color: #F1F1F8;
+            width: 30px;
+            height: 30px;
+            font-family: "Roboto Mono", mono;
+            font-size: 16px;
+            padding: 0 0 5px 0;
+            margin: 0;
+            text-align: center;
+            -webkit-appearance: button;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 1px 7px rgba(0, 0, 0, 0.22);
+            transition: background 200ms 30ms linear;
+          }
+          button:hover {
+            background: rgba(30,30,32,0.9);
+          }
+          button:focus {
+            outline: none;
+          }
           @media screen and (max-width: 1000px) {
             header {
               left: 20px;
@@ -252,7 +262,7 @@ class Project extends Component {
           }
           @media screen and (max-width: 900px) {
             .project-details {
-              grid-auto-flow: row;
+              grid-template-columns: auto;
             }
           }
           @media screen and (max-width: 750px) {

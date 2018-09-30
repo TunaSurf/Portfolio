@@ -56,24 +56,21 @@ class About extends Component {
             <article className={this.state.mounted ? "mounted" : null}>
               <header><h2>About</h2></header>
               <main>
-                <p>I am a passionate web developer, designer, and project manager based out of Virginia Beach, VA.</p>
-                <p>Along with my technical background in engineering, I have a passion for crafting beautifully simple user-oriented experiences. Although I am practiced in all aspects of development, I most enjoy the problem solving and techniques involved with javascript and React development.</p>
-                <p>In my free time I'm most likely:</p>
+                <p>I am a dedicated web developer based out of Virginia Beach, VA. I specialize 
+                  in JavaScript development with a focus on React and NodeJS, and I'm looking to work 
+                  in a fast-paced environment with developers who are as passionate about the 
+                  code they produce as I am. Impactful results are important to me, and I aim to 
+                  complete projects that will leave users saying wow.
+                </p>
+                <p>When I'm not working on one of my projects I'm most likely:</p>
                 <ul className="activities">
                   <li>🏄🏼‍ Surfing (or wishing the waves were better)</li>
                   <li>🍕 Perfecting the art of cooking a frozen pizza</li>
                   <li>🎮 Immersing myself in the world of Destiny</li>
                 </ul>
-                
+                <p>Stay up to date with what I'm working on by following me on <a href="https://github.com/TunaSurf">Github</a>, <a href="https://codepen.io/TunaSurf/">Codepen</a>, and <a href="https://www.linkedin.com/in/chase-burgess-7a94ab8a/">LinkedIn</a></p>
               </main>
             </article>
-            <ul className="links">
-              <li><a href="https://github.com/TunaSurf">Github</a></li>
-              <li><span>•</span></li>
-              <li><a href="https://codepen.io/TunaSurf/">Codepen</a></li>
-              <li><span>•</span></li>
-              <li><a href="https://www.linkedin.com/in/chase-burgess-7a94ab8a/">LinkedIn</a></li>
-            </ul>
           </section>
           <style jsx>{`
             .head {
@@ -167,9 +164,9 @@ class About extends Component {
               color: rgba(30,30,32,0.8);
             }
             li {
-              margin-bottom: .5em;
+              line-height: 2.1em;
             }
-            p {
+            p, ul {
               margin-bottom: 1em;
             }
             main {
@@ -179,24 +176,14 @@ class About extends Component {
             .activities {
               list-style: none;
               margin-left: 0;
-              padding-left: 1.6em;
+              padding-left: 2.6em;
               text-indent: -1.6em;
-            }
-            .links {
-              display: grid;
-              grid-auto-flow: column;
-              grid-gap: 5px;
-              justify-content: center;
-            }
-            .links li {
-              display: inline;
             }
             a, span {
               color: rgba(30,30,32,0.7);
             }
             a {
               position: relative;
-              padding: 0 5px;
               font-weight: 300;
               z-index: 1;
             }
