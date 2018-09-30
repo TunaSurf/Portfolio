@@ -32,7 +32,7 @@ class Index extends Component {
       <ParallaxProvider>
         <Layout pageTitle="Developer">
           <div className="background"></div>
-          <header>
+          <header style={this.state.isMobile ? null : {backgroundAttachment: 'fixed'}}>
             <h1 className={this.state.mounted ? "mounted" : null}>Web<br/>Dev<br/>elo<br/>per</h1>
             <h2 className={this.state.mounted ? "name mounted" : "name"}>Chase Burgess</h2>
             <div className="arrow-container">
@@ -65,7 +65,6 @@ class Index extends Component {
               background-image: url('/static/feathers-500.jpg');
               background-size: cover;
               background-position: center;
-              background-attachment: fixed;
               padding: 0 40px;
               box-sizing: border-box;
               display: flex;

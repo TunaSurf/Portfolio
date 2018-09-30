@@ -56,7 +56,7 @@ class About extends Component {
             <article className={this.state.mounted ? "mounted" : null}>
               <header><h2>About</h2></header>
               <main>
-                <p>I am a dedicated web developer based out of Virginia Beach, VA. I specialize 
+                <p>I am a front-end web developer based out of Virginia Beach, VA. I specialize 
                   in JavaScript development with a focus on React and NodeJS, and I'm looking to work 
                   in a fast-paced environment with developers who are as passionate about the 
                   code they produce as I am. Impactful results are important to me, and I aim to 
