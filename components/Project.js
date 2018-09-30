@@ -225,6 +225,7 @@ class Project extends Component {
             grid-row-start: span -1;
             justify-self: end;
             margin-top: 40px;
+            padding-right: 20px;
           }
           button {
             border: none;
