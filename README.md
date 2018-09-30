@@ -1,6 +1,6 @@
 # Portfolio
 
-[##ChaseBurgess.com](chaseburgess.com)
+[ChaseBurgess.com](chaseburgess.com)
 
 This is my portfolio website built with Next JS 
 
