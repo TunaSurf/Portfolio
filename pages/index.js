@@ -62,7 +62,7 @@ class Index extends Component {
               position: relative;
               height: 90vh;
               width: 100%;
-              background-image: url('./static/feathers-500.jpg');
+              background-image: url('/static/feathers-500.jpg');
               background-size: cover;
               background-position: center;
               background-attachment: fixed;
@@ -232,37 +232,37 @@ class Index extends Component {
             // Background-image sizes for header
             @media only screen and (min-height: 501px) {
               header {
-                background-image: url("./static/feathers-720.jpg"); 
+                background-image: url("/static/feathers-720.jpg"); 
               } 
             }
             @media only screen and (min-height: 721px) {
               header {
-                background-image: url("./static/feathers-900.jpg"); 
+                background-image: url("/static/feathers-900.jpg"); 
               } 
             }
             @media only screen and (min-height: 901px) {
               header {
-                background-image: url("./static/feathers-1080.jpg"); 
+                background-image: url("/static/feathers-1080.jpg"); 
               } 
             }
             @media only screen and (min-height: 1081px) {
               header {
-                background-image: url("./static/feathers-4k.jpg"); 
+                background-image: url("/static/feathers-4k.jpg"); 
               } 
             }
             @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 320px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 320px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 320px), only screen and (min-device-pixel-ratio: 2) and (min-height: 320px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 320px), only screen and (min-resolution: 192dpi) and (min-height: 320px), only screen and (min-resolution: 2dppx) and (min-height: 320px) {
               header {
-                background-image: url("./static/feathers-900.jpg"); 
+                background-image: url("/static/feathers-900.jpg"); 
               } 
             }
             @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 501px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 501px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 501px), only screen and (min-device-pixel-ratio: 2) and (min-height: 501px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 501px), only screen and (min-resolution: 192dpi) and (min-height: 501px), only screen and (min-resolution: 2dppx) and (min-height: 501px) {
               header {
-                background-image: url("./static/feathers-1080.jpg"); 
+                background-image: url("/static/feathers-1080.jpg"); 
               } 
             }
             @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-height: 721px), only screen and (min--moz-device-pixel-ratio: 2) and (min-height: 721px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-height: 721px), only screen and (min-device-pixel-ratio: 2) and (min-height: 721px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-height: 721px), only screen and (min-resolution: 192dpi) and (min-height: 721px), only screen and (min-resolution: 2dppx) and (min-height: 721px) {
               header {
-                background-image: url("./static/feathers-4k.jpg"); 
+                background-image: url("/static/feathers-4k.jpg"); 
               } 
             }
           `}</style>

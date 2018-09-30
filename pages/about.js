@@ -32,7 +32,7 @@ class About extends Component {
         <Layout pageTitle='About'>
           <header className="head">
             <div className="parallax-container">
-              <img className="portrait-base" src="./static/portrait/portrait-base.jpg" alt="Chase portrait" />
+              <img className="portrait-base" src="/static/portrait/portrait-base.jpg" alt="Chase portrait" />
               <Parallax
                 offsetYMax={70}
                 offsetYMin={-100}
@@ -41,7 +41,7 @@ class About extends Component {
               >
                 <h1 className={this.state.mounted ? "mounted" : null}><span>Chase</span></h1>
               </Parallax>
-              <img className="portrait-top" src="./static/portrait/portrait-top.png" />
+              <img className="portrait-top" src="/static/portrait/portrait-top.png" />
               <Parallax
                 offsetYMax={70}
                 offsetYMin={-100}
