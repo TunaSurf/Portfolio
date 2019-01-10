@@ -23,7 +23,7 @@ const Footer = () => (
           </a>
         </li>
       </ul>
-      <p>2018 | Chase Burgess</p>
+      <p>{(new Date()).getFullYear()} | Chase Burgess</p>
     </div>
     <style jsx>{`
       footer {
