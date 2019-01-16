@@ -1,6 +1,7 @@
 # Portfolio
 
 This is my portfolio website built with React and Next JS
+
 [ChaseBurgess.com](chaseburgess.com)
 
 ## Summary
