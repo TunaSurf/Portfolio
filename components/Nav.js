@@ -131,10 +131,13 @@ class Nav extends Component {
             z-index: -1;
             transform: scaleX(0);
             transform-origin: left;
-            transition: 200ms 50ms ease;
           }
-          nav a.active:after, nav a:hover:after {
+          nav a.active:after {
             transform: scaleX(1);
+          }
+          nav a:hover:after {
+            transform: scaleX(1);
+            transition: 200ms 50ms ease;
           }
           .header-background {
             position: absolute;
