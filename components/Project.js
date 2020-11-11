@@ -68,8 +68,9 @@ class Project extends Component {
                 ))}
               </ul>
               <ul>
-                <li><a href={this.props.link}>View Site</a></li>
-                <li><span>•</span></li>
+                {this.props.link && (<li><a href={this.props.link}>View Site</a></li>
+                )}
+                {this.props.link && (<li><span>•</span></li>)}
                 <li><a href={this.props.source}>View Source Code</a></li>
               </ul>
             </div>

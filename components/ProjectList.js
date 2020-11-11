@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Project from './Project';
 import projectsData from '../models/projects.json';
+import { interpolateColors } from '../utilities'
 
-class ProjectList extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      projects: projectsData
-    }
-  }
+function ProjectList(props) {
+  const colors = interpolateColors("#40AFAA", "#85877c", projectsData.length);
 
-  render() {
-    return (
-      <ul>
-        {this.state.projects.map((project, i) => (
-          <Project
-            key={i}
-            name={project.name}
-            tools={project.tools}
-            description={project.description}
-            link={project.link}
-            source={project.source}
-            image={project.image}
-            color={project.color}
-            mobile={this.props.mobile}
-          />
-        ))}
-      </ul>
-      
-    )
-  }
+  return (
+    <ul>
+      {projectsData.map((project, i) => (
+        <Project
+          key={i}
+          name={project.name}
+          tools={project.tools}
+          description={project.description}
+          link={project.link}
+          source={project.source}
+          image={project.image}
+          color={colors[i]}
+          mobile={props.mobile}
+        />
+      ))}
+    </ul>
+  )
 }
 
 export default ProjectList;
