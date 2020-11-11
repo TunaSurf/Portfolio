@@ -1,124 +1,140 @@
-import React, { Component } from 'react';
-import { Parallax } from 'react-scroll-parallax';
-import css from 'styled-jsx/css'
+import React from "react";
+import { Parallax, withController } from "react-scroll-parallax";
 
-class ProjectPreviewImage extends Component {
+function ProjectPreviewImage(props) {
+  return props.mobile ? (
+    <MobilePreview {...props} />
+  ) : (
+    <ParallaxPreviewControlled {...props} />
+  );
+}
 
-  render() {  
-    //Not a fan that I had to essentially use the same styled-jsx markup 
-    //twice to avoid an error in compiling the jsx when using a const.
-    //Would much prefer to keep the code DRY
+function MobilePreview(props) {
+  return (
+    <div className="parallax-container">
+      <img
+        src={`${props.image}/preview.png`}
+        alt={`${props.name} preview`}
+        className="base-img"
+      />
+      <style jsx>{`
+        * {
+          pointer-events: none;
+        }
+        .parallax-container {
+          height: 100%;
+          width: 400px;
+          position: absolute;
+          top: 0;
+          right: 5%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+        }
+        img {
+          user-select: none;
+        }
+        .base-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .base-img {
+          width: 100%;
+          height: 100%;
+        }
+        @media screen and (max-width: 750px) {
+          .parallax-container {
+            right: 0;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          .parallax-container {
+            width: 300px;
+          }
+        }
+        @media screen and (max-width: 500px) {
+          .parallax-container {
+            right: -50px;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
 
-    if (this.props.mobile) {
-      return (
-        <div className="parallax-container">
-          <img src={`${this.props.image}/preview.png`} alt={`${this.props.name} preview`} className="base-img" />
-          <style jsx>{`
-            * {
-              pointer-events: none;
-            }
-            .parallax-container {
-              height: 100%;
-              width: 400px;
-              position: absolute;
-              top: 0;
-              right: 5%;
-              overflow: hidden;
-              display: flex;
-              align-items: center;
-            }
-            img {
-              user-select: none;
-            }
-            .base-img {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-            .base-img {
-              width: 100%;
-              height: 100%;
-            }
-            @media screen and (max-width: 750px) {
-              .parallax-container {
-                right: 0;
-              }
-            }
-            @media screen and (max-width: 600px) {
-              .parallax-container {
-                width: 300px;
-              }
-            }
-            @media screen and (max-width: 500px) {
-              .parallax-container {
-                right: -50px;
-              }
-            }
-          `}</style>
-        </div>
-      )
-    } else {
-      return (
-        <div className="parallax-container">
-          <img src={`${this.props.image}/base.png`} alt={`${this.props.name} preview`} className="base-img" />
-          <Parallax
-            offsetYMax={10}
-            offsetYMin={-10}
-            disabled={this.props.mobile}
-          >
-            <img src={`${this.props.image}/top.png`} className="top-img" />
-          </Parallax>
-          <style jsx>{`
-            * {
-              pointer-events: none;
-            }
-            .parallax-container {
-              height: 100%;
-              width: 400px;
-              position: absolute;
-              top: 0;
-              right: 5%;
-              overflow: hidden;
-              display: flex;
-              align-items: center;
-            }
-            img {
-              user-select: none;
-            }
-            .base-img {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-            .top-img {
-              position: relative;
-              top: 0;
-              left: 0;
-            }
-            .base-img, .top-img {
-              width: 100%;
-              height: 100%;
-            }
-            @media screen and (max-width: 750px) {
-              .parallax-container {
-                right: 0;
-              }
-            }
-            @media screen and (max-width: 600px) {
-              .parallax-container {
-                width: 300px;
-              }
-            }
-            @media screen and (max-width: 500px) {
-              .parallax-container {
-                right: -50px;
-              }
-            }
-          `}</style>
-        </div>
-      )
-    }
-  }
-};
+function ParallaxPreview(props) {
+  const handleLoad = () => {
+    // updates cached values after image dimensions have loaded
+    props.parallaxController.update();
+  };
+
+  return (
+    <div className="parallax-container">
+      <img
+        src={`${props.image}/base.png`}
+        alt={`${props.name} preview`}
+        className="base-img"
+      />
+      <Parallax y={[10, -10]}>
+        <img
+          src={`${props.image}/top.png`}
+          className="top-img"
+          onLoad={handleLoad}
+        />
+      </Parallax>
+      <style jsx>{`
+        * {
+          pointer-events: none;
+        }
+        .parallax-container {
+          height: 100%;
+          width: 400px;
+          position: absolute;
+          top: 0;
+          right: 5%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+        }
+        img {
+          user-select: none;
+        }
+        .base-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .top-img {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .base-img,
+        .top-img {
+          width: 100%;
+          height: 100%;
+        }
+        @media screen and (max-width: 750px) {
+          .parallax-container {
+            right: 0;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          .parallax-container {
+            width: 300px;
+          }
+        }
+        @media screen and (max-width: 500px) {
+          .parallax-container {
+            right: -50px;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+const ParallaxPreviewControlled = withController(ParallaxPreview);
 
 export default ProjectPreviewImage;
