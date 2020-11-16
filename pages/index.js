@@ -52,8 +52,8 @@ class Index extends Component {
               <h2>Projects</h2>
             </div>
             <p>
-              Hey! My name is Chase and I am a Front-End Web Developer specializing in JavaScript and React. 
-              Check out some of the projects I've completed below and visit me on <a href="https://github.com/TunaSurf">Github</a>
+              Hey! My name is Chase and I am a software engineer and web developer.
+              Check out a few of the projects I've completed below and visit me on <a href="https://github.com/TunaSurf">Github</a>
             </p>
           </section>
           <ProjectList mobile={this.state.isMobile} />
@@ -79,6 +79,7 @@ class Index extends Component {
               line-height: 0.9;
               letter-spacing: 12px;
               text-transform: uppercase;
+              margin-bottom: 10px;
               color: #20b2aa;
               mix-blend-mode: hard-light;
               opacity: 0;
