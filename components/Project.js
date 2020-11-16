@@ -151,11 +151,8 @@ class Project extends Component {
             padding: 100px 40px;
             box-sizing: border-box;
             display: grid;
-            // grid-auto-flow: column;
-            grid-template-columns: auto auto;
+            grid-template-columns: 250px 1fr;
             grid-column-gap: 40px;
-            grid-row-gap: 1.4em;
-            justify-content: center;
             transform: translateY(-30px);
             opacity: 0;
             transition: opacity 199ms linear, transform 1ms 199ms linear;
@@ -225,13 +222,13 @@ class Project extends Component {
             grid-column-end: -1;
             grid-row-start: span -1;
             justify-self: end;
-            margin-top: 40px;
+            margin-top: 24px;
             padding-right: 20px;
           }
           button {
             border: none;
             border-radius: 50%;
-            background: rgba(30,30,32,0.7);
+            background: rgba(60,60,65,0.7);
             color: #F1F1F8;
             width: 30px;
             height: 30px;
@@ -242,11 +239,11 @@ class Project extends Component {
             text-align: center;
             -webkit-appearance: button;
             cursor: pointer;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 1px 7px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.25), 0 3px 7px rgba(0, 0, 0, 0.2);
             transition: background 200ms 30ms linear;
           }
           button:hover {
-            background: rgba(30,30,32,0.9);
+            background: rgba(60,60,65,0.9);
           }
           button:focus {
             outline: none;
