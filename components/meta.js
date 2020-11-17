@@ -50,6 +50,7 @@ function Meta(props) {
         html {
           font-family: "Montserrat", sans-serif;
           background: #1e1e20;
+          scroll-behavior: smooth;
         }
         html,
         body {
