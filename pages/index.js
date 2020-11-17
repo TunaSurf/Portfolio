@@ -71,6 +71,7 @@ class Index extends Component {
               flex-direction: column;
               justify-content: center;
               align-items: center;
+              user-select: none;
             }
             h1 {
               font-family: "Roboto Mono", mono;

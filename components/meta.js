@@ -78,7 +78,6 @@ function Meta(props) {
           font-weight: 400;
           line-height: 1.6em;
           color: rgba(30, 30, 32, 0.9);
-          user-select: none;
           -webkit-tap-highlight-color: transparent;
         }
         ul,

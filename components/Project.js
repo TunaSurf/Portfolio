@@ -153,6 +153,7 @@ class Project extends Component {
             display: grid;
             grid-template-columns: 250px 1fr;
             grid-column-gap: 40px;
+            grid-row-gap: 20px;
             transform: translateY(-30px);
             opacity: 0;
             transition: opacity 199ms linear, transform 1ms 199ms linear;
