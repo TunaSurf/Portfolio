@@ -4,7 +4,7 @@
     "tools": ["javascript", "react"],
     "description": "Social commerce marketplace tailored to buying and selling surf-related gear. SurfShop is an in-development project venture built with React on the client side and Google’s Firebase platform on the backend. The application will allow users to share products they wish to sell and find products in their area that they wish to buy from other users. First iterations of the project will focus on creating a classifieds-like experience where the site handles only introducing buyers and sellers; with goals of incorporating e-commerce functionality directly into the site in future iterations.",
     "link": null,
-    "source": "https://github.com/TunaSurf/SurfShop",
+    "source": "https://github.com/TunaSurf/react-firebase-template",
     "image": "/static/project-previews/surfshop-preview"
   },
   {
