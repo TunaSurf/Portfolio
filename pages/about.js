@@ -71,7 +71,7 @@ class About extends Component {
               <main>
                 <p>
                   I am a software engineer with a background in project
-                  management, based out of Virginia Beach, VA. I love the way art
+                  management. I love the way art
                   and engineering are intertwined when creating software for the
                   web, and have a particular captivation with React. Impactful
                   results are important to me, and I believe the best path there
